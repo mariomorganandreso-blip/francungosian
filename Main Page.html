@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITRE : À modifier -->
+    <title>Francungosian Movement – Services publics et informations officielles</title>
+    <style>
+        /* ===== COULEURS (À MODIFIER SI BESOIN) ===== */
+        :root {
+            --gouvernement-bleu: #2d0045;
+            --gouvernement-gris-fonce: #6f777b;
+            --gouvernement-gris-clair: #f3f2f1;
+            --gouvernement-noir: #0b0c0c;
+            --gouvernement-blanc: #ffffff;
+            --gouvernement-rouge: #ff1fe0;
+        }
+
+        /* ===== RESET ET POLICES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--gouvernement-blanc);
+            color: var(--gouvernement-noir);
+            line-height: 1.5;
+        }
+
+        /* ===== EN-TÊTE ===== */
+        .header {
+            background-color: var(--gouvernement-bleu);
+            color: var(--gouvernement-blanc);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__logo {
+            font-size: 24px;
+            font-weight: bold;
+            /* TITRE/LOGO : À modifier */
+            content: "Francungosian Movement";
+        }
+
+        .header__search {
+            width: 40%;
+        }
+
+        .header__search input {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        /* ===== MENU PRINCIPAL ===== */
+        .main-nav {
+            background-color: var(--gouvernement-gris-clair);
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--gouvernement-gris-fonce);
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--gouvernement-noir);
+            font-weight: 500;
+        }
+
+        /* LIENS DU MENU : À modifier */
+        /*
+            Exemple :
+            <li><a href="#">Demarches administratives</a></li>
+            <li><a href="#">Actualités</a></li>
+        */
+
+        /* ===== BANNIÈRE PRINCIPALE ===== */
+        .hero {
+            background-color: var(--gouvernement-gris-clair);
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--gouvernement-gris-fonce);
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            /* TITRE DE LA BANNIÈRE : À modifier */
+            content: "Bienvenue sur le site officiel du mouvement francungosien";
+        }
+
+        .hero p {
+            font-size: 18px;
+            /* TEXTE DE LA BANNIÈRE : À modifier */
+            content: "Trouvez les informations et services du mouvement.";
+        }
+
+        /* ===== CONTENU PRINCIPAL ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--gouvernement-blanc);
+            border: 1px solid var(--gouvernement-gris-fonce);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .card h2 {
+            color: var(--gouvernement-bleu);
+            margin-bottom: 10px;
+            /* TITRE DES CARTES : À modifier */
+            content: "Exemple de titre";
+        }
+
+        .card p {
+            margin-bottom: 15px;
+            /* TEXTE DES CARTES : À modifier */
+            content: "Description de la section ou du service.";
+        }
+
+        .card a {
+            color: var(--gouvernement-bleu);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ===== PIED DE PAGE ===== */
+        .footer {
+            background-color: var(--gouvernement-gris-clair);
+            padding: 40px 20px 20px;
+            border-top: 1px solid var(--gouvernement-gris-fonce);
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+            /* TITRE DES SECTIONS DU PIED : À modifier */
+            content: "Exemple";
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--gouvernement-noir);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* LIENS DU PIED DE PAGE : À modifier */
+        /*
+            Exemple :
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">Accessibilité</a></li>
+        */
+
+        /* ===== BOUTONS ===== */
+        .btn {
+            display: inline-block;
+            background-color: var(--gouvernement-bleu);
+            color: var(--gouvernement-blanc);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .header__search {
+                width: 100%;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- EN-TÊTE -->
+    <header class="header">
+        <div class="header__logo">
+            <!-- TITRE/LOGO : À modifier -->
+            Mouvement Francungosien
+        </div>
+        <div class="header__search">
+            <input type="text" placeholder="Rechercher sur le mouvement">
+        </div>
+    </header>
+
+    <!-- MENU PRINCIPAL -->
+    <nav class="main-nav">
+        <ul>
+            <!-- LIENS DU MENU : À modifier -->
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Actualités</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- BANNIÈRE PRINCIPALE -->
+    <section class="hero">
+        <h1>
+            <!-- TITRE DE LA BANNIÈRE : À modifier -->
+            Bienvenue sur le site officiel du mouvement francungosien
+        </h1>
+        <p>
+            <!-- TEXTE DE LA BANNIÈRE : À modifier -->
+            Trouvez les informations et services du mouvement.
+        </p>
+    </section>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <div class="card">
+            <h2>
+                <!-- TITRE DE LA CARTE : À modifier -->
+                Informations
+            </h2>
+            <p>
+                <!-- TEXTE DE LA CARTE : À modifier -->
+                Débloquez certaines informations sur notre site pendant qu'il est en construction.
+            </p>
+            <a href="#" class="btn">En savoir plus</a>
+        </div>
+
+        <div class="card">
+            <h2>
+                <!-- TITRE DE LA CARTE : À modifier -->
+                Formulaires
+            </h2>
+            <p>
+                <!-- TEXTE DE LA CARTE : À modifier -->
+                Effectuez un formulaire pour voir si vous pouvez bénéficier d'un travail purement volontaire avec des règles strictes.
+            </p>
+            <a href="#" class="btn">En savoir plus</a>
+        </div>
+
+        <div class="card">
+            <h2>
+                <!-- TITRE DE LA CARTE : À modifier -->
+                Idées
+            </h2>
+            <p>
+                <!-- TEXTE DE LA CARTE : À modifier -->
+                Envoyez nous vos idées par mail pour que l'on voyent si on peut les appliquer à notre mouvement
+            </p>
+            <a href="#" class="btn">En savoir plus</a>
+        </div>
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>
+                    <!-- TITRE DE LA SECTION : À modifier -->
+                    À propos
+                </h3>
+                <ul>
+                    <!-- LIENS : À modifier -->
+                    <li><a href="#">Qui sommes-nous ?</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>
+                    <!-- TITRE DE LA SECTION : À modifier -->
+                    Services
+                </h3>
+                <ul>
+                    <!-- LIENS : À modifier -->
+                    <li><a href="#">Informations</a></li>
+                    <li><a href="#">Formulaires</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>
+                    <!-- TITRE DE LA SECTION : À modifier -->
+                    Légales
+                </h3>
+                <ul>
+                    <!-- LIENS : À modifier -->
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>
+                    <!-- TITRE DE LA SECTION : À modifier -->
+                    Réseaux sociaux
+                </h3>
+                <ul>
+                    <!-- LIENS : À modifier -->
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
